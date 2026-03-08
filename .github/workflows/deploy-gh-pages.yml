@@ -49,9 +49,6 @@ jobs:
           VITE_BASE: ${{ steps.base.outputs.path }}
           VITE_ORDER_SUBMIT_URL: ${{ vars.VITE_ORDER_SUBMIT_URL }}
 
-      - name: Obfuscate algorithm chunk
-        run: node scripts/obfuscate.js
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
