@@ -37,9 +37,9 @@ jobs:
         id: base
         run: |
           if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
-            echo "path=/" >> $GITHUB_OUTPUT
+            echo -n "path=/" >> $GITHUB_OUTPUT
           else
-            echo "path=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
+            echo -n "path=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
           fi
 
       - name: Build for GitHub Pages
