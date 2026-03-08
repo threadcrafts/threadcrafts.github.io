@@ -33,13 +33,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Set base path for GitHub Pages
+        id: base
+        run: |
+          if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
+            echo "path=/" >> $GITHUB_OUTPUT
+          else
+            echo "path=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build for GitHub Pages
         run: npm run build
         env:
           VITE_GH_PAGES: "1"
-          # Use your repo name (e.g. string-art-app or thread-crafts)
-          VITE_BASE: /${{ github.event.repository.name }}/
-          # Set in repo Settings → Secrets and variables → Actions → Variables
+          VITE_BASE: ${{ steps.base.outputs.path }}
           VITE_ORDER_SUBMIT_URL: ${{ vars.VITE_ORDER_SUBMIT_URL }}
 
       - name: Obfuscate algorithm chunk
