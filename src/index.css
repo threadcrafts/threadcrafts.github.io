@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  /* Light theme semantic colors */
+  --color-background: hsl(40 33% 98%);
+  --color-foreground: hsl(240 10% 12%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 12%);
+  --color-muted: hsl(240 5% 96%);
+  --color-muted-foreground: hsl(240 4% 46%);
+  --color-border: hsl(240 6% 90%);
+  --color-input: hsl(240 6% 90%);
+  --color-ring: hsl(24 95% 53%);
+  --color-accent: hsl(24 95% 53%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent-muted: hsl(24 95% 93%);
+  --radius: 0.75rem;
+  --shadow-soft: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+  --shadow-soft-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.12), 0 8px 24px -8px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 40px -8px hsl(24 95% 53% / 0.4);
+}
+
+.dark {
+  --color-background: hsl(240 10% 8%);
+  --color-foreground: hsl(0 0% 98%);
+  --color-card: hsl(240 8% 12%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-muted: hsl(240 6% 16%);
+  --color-muted-foreground: hsl(240 4% 60%);
+  --color-border: hsl(240 6% 20%);
+  --color-input: hsl(240 6% 20%);
+  --color-ring: hsl(24 95% 53%);
+  --color-accent: hsl(24 95% 53%);
+  --color-accent-foreground: hsl(0 0% 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}

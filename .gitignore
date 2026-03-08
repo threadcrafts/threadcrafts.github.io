@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI / scaffolding artifacts (do not commit)
+.cursor
+.cursorignore
+AGENTS.md
+*.plan
+PLAN.md
+**/PLAN.md
+
+# Optional backend (Google Apps Script); not needed for static UI
+order-backend
